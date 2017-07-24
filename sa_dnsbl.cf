@@ -1,0 +1,70 @@
+header   SHFIVE rbleval:check_rbl('sh5', 'all.s5h.net')
+describe SHFIVE mm added
+tflags       SHFIVE net
+score    SHFIVE 0.5
+
+header   SURRIEL rbleval:check_rbl('surriel', 'psbl.surriel.com')
+describe SURRIEL mm added
+tflags       SURRIEL net
+score    SURRIEL 0.5
+
+header   WOODY rbleval:check_rbl('woody', 'blacklist.woody.ch')
+describe WOODY mm added
+tflags       WOODY net
+score    WOODY 0.5
+
+header   INPS rbleval:check_rbl('inps', 'dnsbl.inps.de')
+describe INPS mm added
+tflags       INPS net
+score    INPS 0.5
+
+header   SORBS rbleval:check_rbl('sorbs', 'dnsbl.sorbs.net')
+describe SORBS mm added
+tflags       SORBS net
+score    SORBS 0.5
+
+header   SORBSDUL rbleval:check_rbl('sorbsdul', 'dul.dnsbl.sorbs.net')
+describe SORBSDUL mm added
+tflags       SORBSDUL net
+score    SORBSDUL 0.5
+
+header   TOREXIT rbleval:check_rbl('torexitnodes', 'exitnodes.tor.dnsbl.sectoor.de')
+describe TOREXIT mm added
+tflags       TOREXIT net
+score    TOREXIT 0.5
+
+
+header   SINGULAR rbleval:check_rbl('singular', 'singular.ttk.pte.hu')
+describe SINGULAR mm added
+tflags       SINGULAR net
+score    SINGULAR 0.5
+
+
+header   SUOMISPAM rbleval:check_rbl('suomispam', 'bl.suomispam.net')
+describe SUOMISPAM mm added
+tflags       SUOMISPAM net
+score    SUOMISPAM 0.5
+
+
+header   BARRACUDA rbleval:check_rbl('barracuda', 'bl.barracudacentral.org')
+describe BARRACUDA mm added
+tflags       BARRACUDA net
+score    BARRACUDA 0.5
+
+
+header   SPAMCANNIBAL rbleval:check_rbl('spamcannibal', 'bl.spamcannibal.org')
+describe SPAMCANNIBAL mm added
+tflags       SPAMCANNIBAL net
+score    SPAMCANNIBAL 0.5
+
+#https://wiki.apache.org/spamassassin/Rules/RCVD_IN_BL_SPAMCOP_NET
+#header   SPAMCOP rbleval:check_rbl('spamcop', 'bl.spamcop.net')
+#describe SPAMCOP mm added
+#tflags       SPAMCOP net
+#score    SPAMCOP 0.5
+
+
+header   DRONEBL rbleval:check_rbl('dronebl', 'dnsbl.dronebl.org')
+describe DRONEBL mm added
+tflags       DRONEBL net
+score    DRONEBL 0.5
