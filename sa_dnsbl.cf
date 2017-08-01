@@ -1,3 +1,16 @@
+#https://spameatingmonkey.com/services/SEM-FRESH
+urirhssub SEM_FRESH fresh.spameatingmonkey.net. A 2
+body SEM_FRESH eval:check_uridnsbl('SEM_FRESH')
+describe SEM_FRESH Contains a domain registered less than 5 days ago
+tflags SEM_FRESH net
+score SEM_FRESH 0.5
+
+#https://spameatingmonkey.com/services/SEM-BACKSCATTER
+header RCVD_IN_SEMBACKSCATTER eval:check_rbl('sembackscatter-lastexternal', 'backscatter.spameatingmonkey.net')
+tflags RCVD_IN_SEMBACKSCATTER net
+describe RCVD_IN_SEMBACKSCATTER Received from an IP listed by SEM-BACKSCATTER
+score RCVD_IN_SEMBACKSCATTER 0.5
+
 header   SHFIVE rbleval:check_rbl('sh5', 'all.s5h.net')
 describe SHFIVE mm added
 tflags       SHFIVE net
@@ -21,12 +34,12 @@ score    INPS 0.5
 header   SORBS rbleval:check_rbl('sorbs', 'dnsbl.sorbs.net')
 describe SORBS mm added
 tflags       SORBS net
-score    SORBS 0.5
+score    SORBS 0.25
 
 header   SORBSDUL rbleval:check_rbl('sorbsdul', 'dul.dnsbl.sorbs.net')
 describe SORBSDUL mm added
 tflags       SORBSDUL net
-score    SORBSDUL 0.5
+score    SORBSDUL 0.25
 
 header   TOREXIT rbleval:check_rbl('torexitnodes', 'exitnodes.tor.dnsbl.sectoor.de')
 describe TOREXIT mm added
@@ -43,7 +56,7 @@ score    SINGULAR 0.5
 header   SUOMISPAM rbleval:check_rbl('suomispam', 'bl.suomispam.net')
 describe SUOMISPAM mm added
 tflags       SUOMISPAM net
-score    SUOMISPAM 0.5
+score    SUOMISPAM 0.7
 
 
 header   BARRACUDA rbleval:check_rbl('barracuda', 'bl.barracudacentral.org')
