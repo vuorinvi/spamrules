@@ -14,22 +14,22 @@ score RCVD_IN_SEMBACKSCATTER 0.5
 header   SHFIVE rbleval:check_rbl('sh5', 'all.s5h.net')
 describe SHFIVE mm added
 tflags       SHFIVE net
-score    SHFIVE 0.5
+score    SHFIVE 0.8
 
 header   SURRIEL rbleval:check_rbl('surriel', 'psbl.surriel.com')
 describe SURRIEL mm added
 tflags       SURRIEL net
-score    SURRIEL 0.5
+score    SURRIEL 0.8
 
 header   WOODY rbleval:check_rbl('woody', 'blacklist.woody.ch')
 describe WOODY mm added
 tflags       WOODY net
-score    WOODY 0.5
+score    WOODY 0.8
 
 header   INPS rbleval:check_rbl('inps', 'dnsbl.inps.de')
 describe INPS mm added
 tflags       INPS net
-score    INPS 0.5
+score    INPS 0.8
 
 header   SORBS rbleval:check_rbl('sorbs', 'dnsbl.sorbs.net')
 describe SORBS mm added
