@@ -16,6 +16,22 @@ describe SHFIVE mm added
 tflags       SHFIVE net
 score    SHFIVE 0.8
 
+
+# very good list for detecting new spam sources
+# http://www.spamsources.fabel.dk/
+header RCVD_IN_FABEL rbleval:check_rbl('fabel', 'spamsources.fabel.dk.')
+describe RCVD_IN_FABEL Received via a relay in spamsources.fabel.dk
+tflags RCVD_IN_FABEL net
+score  RCVD_IN_FABEL 2
+
+
+# http://www.gbudb.com
+# more or less accurate
+header      RCVD_IN_GBUDB   eval:check_rbl('gbudb', 'truncate.gbudb.net.', '127.0.0.2')
+describe    RCVD_IN_GBUDB   Listed in truncate.gbudb.net
+tflags      RCVD_IN_GBUDB   net
+score       RCVD_IN_GBUDB   0.8
+
 header   SURRIEL rbleval:check_rbl('surriel', 'psbl.surriel.com')
 describe SURRIEL mm added
 tflags       SURRIEL net
@@ -36,10 +52,12 @@ describe SORBS mm added
 tflags       SORBS net
 score    SORBS 0.25
 
+# not so reliable
 header   SORBSDUL rbleval:check_rbl('sorbsdul', 'dul.dnsbl.sorbs.net')
 describe SORBSDUL mm added
 tflags       SORBSDUL net
 score    SORBSDUL 0.25
+
 
 header   TOREXIT rbleval:check_rbl('torexitnodes', 'exitnodes.tor.dnsbl.sectoor.de')
 describe TOREXIT mm added
@@ -52,7 +70,7 @@ describe SINGULAR mm added
 tflags       SINGULAR net
 score    SINGULAR 0.5
 
-
+# not so reliable but comprehensive
 header   SUOMISPAM rbleval:check_rbl('suomispam', 'bl.suomispam.net')
 describe SUOMISPAM mm added
 tflags       SUOMISPAM net
