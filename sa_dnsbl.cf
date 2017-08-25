@@ -3,13 +3,20 @@ urirhssub SEM_FRESH fresh.spameatingmonkey.net. A 2
 body SEM_FRESH eval:check_uridnsbl('SEM_FRESH')
 describe SEM_FRESH Contains a domain registered less than 5 days ago
 tflags SEM_FRESH net
-score SEM_FRESH 0.5
+score SEM_FRESH 0.8
 
 #https://spameatingmonkey.com/services/SEM-BACKSCATTER
 header RCVD_IN_SEMBACKSCATTER eval:check_rbl('sembackscatter-lastexternal', 'backscatter.spameatingmonkey.net')
 tflags RCVD_IN_SEMBACKSCATTER net
 describe RCVD_IN_SEMBACKSCATTER Received from an IP listed by SEM-BACKSCATTER
-score RCVD_IN_SEMBACKSCATTER 0.5
+score RCVD_IN_SEMBACKSCATTER 0.8
+
+# SEM-BLACK
+header RCVD_IN_SEMBLACK eval:check_rbl('semblack-lastexternal', 'bl.spameatingmonkey.net')
+tflags RCVD_IN_SEMBLACK net
+describe RCVD_IN_SEMBLACK Received from an IP listed by SEM-BLACK
+score RCVD_IN_SEMBLACK 0.8
+
 
 header   SHFIVE rbleval:check_rbl('sh5', 'all.s5h.net')
 describe SHFIVE mm added
@@ -22,7 +29,7 @@ score    SHFIVE 0.8
 header RCVD_IN_FABEL rbleval:check_rbl('fabel', 'spamsources.fabel.dk.')
 describe RCVD_IN_FABEL Received via a relay in spamsources.fabel.dk
 tflags RCVD_IN_FABEL net
-score  RCVD_IN_FABEL 2
+score  RCVD_IN_FABEL 1
 
 
 # http://www.gbudb.com
@@ -50,43 +57,37 @@ score    INPS 0.8
 header   SORBS rbleval:check_rbl('sorbs', 'dnsbl.sorbs.net')
 describe SORBS mm added
 tflags       SORBS net
-score    SORBS 0.25
-
-# not so reliable
-header   SORBSDUL rbleval:check_rbl('sorbsdul', 'dul.dnsbl.sorbs.net')
-describe SORBSDUL mm added
-tflags       SORBSDUL net
-score    SORBSDUL 0.25
+score    SORBS 0.5
 
 
 header   TOREXIT rbleval:check_rbl('torexitnodes', 'exitnodes.tor.dnsbl.sectoor.de')
 describe TOREXIT mm added
 tflags       TOREXIT net
-score    TOREXIT 0.5
+score    TOREXIT 0.8
 
 
 header   SINGULAR rbleval:check_rbl('singular', 'singular.ttk.pte.hu')
 describe SINGULAR mm added
 tflags       SINGULAR net
-score    SINGULAR 0.5
+score    SINGULAR 0.8
 
 # not so reliable but comprehensive
 header   SUOMISPAM rbleval:check_rbl('suomispam', 'bl.suomispam.net')
 describe SUOMISPAM mm added
 tflags       SUOMISPAM net
-score    SUOMISPAM 0.7
+score    SUOMISPAM 0.9
 
 
 header   BARRACUDA rbleval:check_rbl('barracuda', 'bl.barracudacentral.org')
 describe BARRACUDA mm added
 tflags       BARRACUDA net
-score    BARRACUDA 0.5
+score    BARRACUDA 0.8
 
 
 header   SPAMCANNIBAL rbleval:check_rbl('spamcannibal', 'bl.spamcannibal.org')
 describe SPAMCANNIBAL mm added
 tflags       SPAMCANNIBAL net
-score    SPAMCANNIBAL 0.5
+score    SPAMCANNIBAL 0.8
 
 #https://wiki.apache.org/spamassassin/Rules/RCVD_IN_BL_SPAMCOP_NET
 #header   SPAMCOP rbleval:check_rbl('spamcop', 'bl.spamcop.net')
@@ -98,4 +99,4 @@ score    SPAMCANNIBAL 0.5
 header   DRONEBL rbleval:check_rbl('dronebl', 'dnsbl.dronebl.org')
 describe DRONEBL mm added
 tflags       DRONEBL net
-score    DRONEBL 0.5
+score    DRONEBL 0.8
